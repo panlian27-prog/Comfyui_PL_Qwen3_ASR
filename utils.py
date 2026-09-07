@@ -97,11 +97,11 @@ def seconds_to_srt_time(seconds):
     return f"{hours:02d}:{minutes:02d}:{secs:02d},{milliseconds:03d}"
 
 def seconds_to_lrc_time(seconds):
-    """Convert seconds to LRC time format (MM:SS,mmm)"""
+    """Convert seconds to LRC time format (MM:SS.mmm)"""
     minutes = int(seconds // 60)
     secs = int(seconds % 60)
     milliseconds = int((seconds % 1) * 1000)
-    return f"{minutes:02d}:{secs:02d},{milliseconds:03d}"
+    return f"{minutes:02d}:{secs:02d}.{milliseconds:03d}"
 
 def aligner_to_sentence(text, items):
     if text is None:
